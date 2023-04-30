@@ -19,9 +19,19 @@ from sqlalchemy.orm import scoped_session, sessionmaker
 classes = {"Amenity": Amenity, "City": City,
            "Place": Place, "Review": Review, "State": State, "User": User}
 
-
 class DBStorage:
-    """interaacts with the MySQL database"""
+    """handles long term storage of all class instances"""
+    CNC = {
+        'BaseModel': base_model.BaseModel,
+        'Amenity': amenity.Amenity,
+        'City': city.City,
+        'Place': place.Place,
+        'Review': review.Review,
+        'State': state.State,
+        'User': user.User
+    }
+
+    """ handles storage for database """
     __engine = None
     __session = None
 
